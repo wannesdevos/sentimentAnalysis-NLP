@@ -68,7 +68,7 @@ This will:
 Start the FastAPI server:
 
 ```bash
-uv run fastapi dev src/sentiment_analysis.py
+uv run fastapi dev src/sentiment_analysis_fastapi.py
 ```
 
 The API will be available at `http://localhost:8000`
