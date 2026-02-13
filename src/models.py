@@ -1,8 +1,9 @@
-import torch
 from transformers import pipeline
 
 # The default model is "distilbert-base-uncased-finetuned-sst-2-english"
 model_1_pipeline = pipeline("sentiment-analysis")
+
+
 def predict_model_1(text):
     result = model_1_pipeline(text[:512])[0]
     return result["label"].lower(), result["score"]
