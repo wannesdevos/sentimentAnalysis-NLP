@@ -35,9 +35,7 @@ def benchmark_model(predict_fn, model_name, df):
             predictions.append(label.lower())
             scores.append(score)
         except Exception as e:
-            print(f"Error processing row {idx}: {e}")
-            predictions.append("negative")  # default fallback
-            scores.append(0.5)
+            raise ValueError(f"Error processing row {idx}: {e}")
 
     total_time = time.time() - start_time
     avg_time_per_review = total_time / len(df)
